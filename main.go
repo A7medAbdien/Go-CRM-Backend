@@ -20,9 +20,9 @@ func setupRoutes(app *fiber.App) {
 
 func initDatabase() {
 	var err error
-	database.DBConn, err = gorm.Open("sqlite3", "db/leads.db")
+	database.DBConn, err = gorm.Open("sqlite3", "leads.db")
 	if err != nil {
-		panic("failed to connect database")
+		panic("failed to connect database, \n" + err.Error())
 	}
 	fmt.Println("Connection opened to database")
 	database.DBConn.AutoMigrate(&lead.Lead{})
