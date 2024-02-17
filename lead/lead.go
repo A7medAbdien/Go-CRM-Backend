@@ -40,7 +40,6 @@ func NewLead(c *fiber.Ctx) {
 	}
 	db.Create(&lead)
 	c.JSON(lead)
-
 }
 
 func DeleteLead(c *fiber.Ctx) {
